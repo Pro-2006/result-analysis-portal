@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Result Analysis Portal</title>
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/utilities.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <style>
+    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .portal-selector { max-width: 800px; margin: 0 auto; text-align: center; padding: 2rem; }
+    .portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .portal-card { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 2rem; border-radius: 8px; text-decoration: none; transition: 0.3s; }
+    .portal-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
+    .portal-card h3 { margin: 0 0 0.5rem; font-size: 1.5rem; }
+    .portal-card p { margin: 0; opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="portal-selector">
+    <h1>Result Analysis Portal</h1>
+    <p class="text-muted">Select your portal to continue</p>
+    
+    <div class="portal-grid">
+      <a href="admin/index.html" class="portal-card">
+        <h3>Admin Portal</h3>
+        <p>Manage users, courses, and results</p>
+      </a>
+      <a href="faculty/index.html" class="portal-card">
+        <h3>Faculty Portal</h3>
+        <p>Upload results and manage courses</p>
+      </a>
+      <a href="student/index.html" class="portal-card">
+        <h3>Student Portal</h3>
+        <p>View your results and courses</p>
+      </a>
+    </div>
+    
+    <p class="mt-6 text-muted">Result Analysis Portal v1.0 • Generated on 2025-11-07</p>
+  </div>
+</body>
+</html>
