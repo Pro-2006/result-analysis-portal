@@ -1,43 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Result Analysis Portal</title>
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/utilities.css" />
-  <link rel="stylesheet" href="assets/css/components.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result Analysis Portal - Select Your Role</title>
   <style>
-    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-    .portal-selector { max-width: 800px; margin: 0 auto; text-align: center; padding: 2rem; }
-    .portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .portal-card { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 2rem; border-radius: 8px; text-decoration: none; transition: 0.3s; }
-    .portal-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
-    .portal-card h3 { margin: 0 0 0.5rem; font-size: 1.5rem; }
-    .portal-card p { margin: 0; opacity: 0.9; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+    }
+    .header {
+      margin-bottom: 3rem;
+    }
+    .header h1 {
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    .header p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.25rem;
+    }
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .portal-card {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .portal-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    }
+    .portal-card__icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+    .portal-card--admin .portal-card__icon {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+    .portal-card--faculty .portal-card__icon {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+    }
+    .portal-card--student .portal-card__icon {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+    }
+    .portal-card h2 {
+      color: #2a365d;
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .portal-card p {
+      color: #6b7280;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .footer {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.875rem;
+    }
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2rem; }
+      .portal-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <div class="portal-selector">
-    <h1>Result Analysis Portal</h1>
-    <p class="text-muted">Select your portal to continue</p>
+  <div class="container">
+    <div class="header">
+      <h1>Result Analysis Portal</h1>
+      <p>Select your role to continue</p>
+    </div>
     
     <div class="portal-grid">
-      <a href="admin/index.html" class="portal-card">
-        <h3>Admin Portal</h3>
-        <p>Manage users, courses, and results</p>
+      <a href="admin/index.html" class="portal-card portal-card--admin">
+        <div class="portal-card__icon">🎯</div>
+        <h2>Admin Portal</h2>
+        <p>Manage users, courses, faculty mapping, student enrollment, and generate comprehensive reports</p>
       </a>
-      <a href="faculty/index.html" class="portal-card">
-        <h3>Faculty Portal</h3>
-        <p>Upload results and manage courses</p>
+      
+      <a href="faculty/index.html" class="portal-card portal-card--faculty">
+        <div class="portal-card__icon">👨‍🏫</div>
+        <h2>Faculty Portal</h2>
+        <p>View assigned courses, manage students, upload results, and access teaching resources</p>
       </a>
-      <a href="student/index.html" class="portal-card">
-        <h3>Student Portal</h3>
-        <p>View your results and courses</p>
+      
+      <a href="student/index.html" class="portal-card portal-card--student">
+        <div class="portal-card__icon">🎓</div>
+        <h2>Student Portal</h2>
+        <p>Check your results, view enrolled courses, track attendance, and download reports</p>
       </a>
     </div>
     
-    <p class="mt-6 text-muted">Result Analysis Portal v1.0 • Generated on 2025-11-07</p>
+    <div class="footer">
+      <p>Result Analysis Portal v1.0 • Generated on 2025-11-07</p>
+    </div>
   </div>
 </body>
 </html>
